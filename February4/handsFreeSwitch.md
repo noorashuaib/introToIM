@@ -6,3 +6,4 @@ My switch is a simple circuit consisting of an LED light, a resistor, connecting
 
 ![](20200203_213153.jpg)
 
+[Here](https://vimeo.com/389163452) is my video of the switch in action.
