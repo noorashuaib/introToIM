@@ -3,6 +3,6 @@ My project uses an ultrasonic detector and a photoresistor to create a motion se
 
 **Schematic of circuit**
 
-![](schematicMotionSensor.jpg)
+![](schematicMotionSensor.jpeg)
 
 [Video of motion sensor](https://vimeo.com/390540446)
