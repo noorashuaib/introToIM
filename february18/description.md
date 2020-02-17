@@ -5,3 +5,6 @@ I struggled with using a switch for my circuit as I wanted to use one which woul
 **Pictures:**
 ![](20200216_224855.jpg)
 ![](20200216_224920.jpg)
+
+**Schematic:**
+![](20200217_205452.jpg)
