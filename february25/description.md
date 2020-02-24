@@ -8,7 +8,7 @@ Another struggle I had with the project is the occassionally random note given o
 
 **Schematic of circuit**
 
-![](New Doc 2020-02-24 23.46.47.jpg)
+![](schematic.jpg)
 
 **Pictures**
 ![](20200224_232256.jpg)
