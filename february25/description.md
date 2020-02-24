@@ -7,4 +7,12 @@ I struggled with incorporating the servo motor in my project, and I feel as thou
 Another struggle I had with the project is the occassionally random note given off by the piezo buzzer despite the distance of the object not changing. I checked if my connections are secure, and I ensured that the code was accurate, but I was unable to detect the reason for the occassional random note. 
 
 **Schematic of circuit**
-![](
+![](New Doc 2020-02-24 23.46.47.jpg)
+
+**Pictures**
+![](20200224_232256.jpg)
+![](20200224_232209.jpg)
+![](20200224_232220.jpg)
+
+**Video**
+[Here](https://vimeo.com/393508377) is the video of how my project works
