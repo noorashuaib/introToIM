@@ -18,3 +18,4 @@ Another struggle I had with the project is the occassionally random note given o
 **Video**
 
 [Here](https://vimeo.com/393508377) is the video of how my project works
+
