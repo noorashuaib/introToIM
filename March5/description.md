@@ -12,3 +12,7 @@ Overall, I'm happy with my final product as it achieved the goal I had in mind a
 
 **Pictures of the project**
 
+![](total.jpg)
+![](front.jpg)
+![](up.jpg)
+![](closeup.jpg)
