@@ -5,15 +5,17 @@ Servo servoRed;
 Servo servoBlue;
 Servo servoGreen;
 
+/* integers for the buttons */
 const int redButton = 7;
 const int blueButton = 6;
 const int greenButton = 5;
-const int pos = 0;
-const int potentiometer = 0;
-const int val;
 const int redState = 0;
 const int blueState = 0;
-const int greenState = 0; 
+const int greenState = 0;
+const int pos = 0;
+/* integers for the potentiometer */
+const int potentiometer = 0;
+const int val; 
 const int smallDelay = 15;
 
 void setup() {
@@ -30,6 +32,7 @@ void setup() {
 }
 
 void loop() {
+  
   /* the digitalReads make the markers only move when you press a 
   button */
   redState = digitalRead(redButton);
@@ -43,7 +46,7 @@ void loop() {
   servoPaper.write(val);
   delay(smallDelay);
 
-  /*these commands are for the servos controlled with push buttons */
+  /* These commands are for the servos controlled with push buttons. The if statement within the for loop makes the servo only move when the button is pressed.*/
   
   for (pos = 0; pos <= 180; pos += 1) {
     if (redState == HIGH) {
