@@ -13,7 +13,7 @@ const int redState = 0;
 const int blueState = 0;
 const int greenState = 0;
 const int pos = 0;
-/* integers for the potentiometer */
+/* integers for the potentiometer. The small delay is so that each servo will finish its motion before the next servo moves. */
 const int potentiometer = 0;
 const int val;
 const int smallDelay = 15;
@@ -39,7 +39,7 @@ void loop() {
   blueState = digitalRead(blueButton);
   greenState = digitalRead(greenButton);
 
-  /* first, the servo connected to the canvas (paper) is controlled using the potentiometer */
+  /* first, the servo connected to the canvas (paper) is controlled using the potentiometer by mapping the values of the potentiometer onto the values of the potentiometer. */
 
   val = analogRead(potentiometer);
   val = map(val, 0, 1023, 0, 180);
