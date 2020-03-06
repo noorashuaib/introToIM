@@ -17,3 +17,4 @@ Overall, I'm happy with my final product as it achieved the goal I had in mind a
 ![](up.jpg)
 ![](closeup.jpg)
 ![](breadboardproto.jpg)
+![](schematic1.jgp)
