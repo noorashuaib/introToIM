@@ -376,3 +376,213 @@ void clickTheBall() {
   }
 }
 
+// Attempt 3
+
+// speed of the white balls
+float XSPEED = 2;
+int YSPEED = 3;
+// size of the white balls
+int ballSize = 15;
+// the coordinates of the white balls
+float ballx, bally;
+// radius of the other white balls
+float r = ballSize/2;
+// size of the main ball that the player has to click
+float mainBallSize = 30;
+// initial speed of the main ball
+int MAININITIALXSPEED = 2;
+int MAININITIALYSPEED = 3;
+// radius of the main ball
+float mainr;
+// gameScreen is used to show different screens at the start, and if you win or lose
+int gameScreen = 0;
+boolean mouseOnRedBall;
+int mouseClicks = 0;
+float mainBallx, mainBally;
+
+
+
+// this class is for the main ball
+class MainBall {
+  float mainBallSize = 30; 
+  float mainBallxSpeed, mainBallySpeed;
+  float mainr = mainBallSize/2;
+  MainBall(float mainxpos, float mainypos) {
+    mainBallx = mainxpos;
+    mainBally = mainypos;
+    mainBallxSpeed = MAININITIALXSPEED;
+    mainBallySpeed = MAININITIALYSPEED;
+  }
+
+  // for the movement of the main ball
+  void updateMainBall() {
+    // to move the main ball and check collisions with the wall
+    mainBallx += mainBallxSpeed;
+    mainBally += mainBallySpeed;
+  }
+
+  void moveMainBall() {
+    if ( (mainBallx<mainr) || (mainBallx>width-mainr)) {
+      mainBallxSpeed = -mainBallxSpeed;
+    }
+    if ( (mainBally<mainr) || (mainBally>height-mainr)) {
+      mainBallySpeed = -mainBallySpeed;
+    }
+  }
+
+  // to make the main ball
+  void drawMainBall() {
+    fill(237, 29, 14);
+    ellipse(mainBallx, mainBally, mainBallSize, mainBallSize);
+  }
+
+
+  /*  void isMouseOnMainBall() {
+   float distance = dist(mouseX, mouseY, mainRedBall.mainBallx, mainRedBall.mainBally);
+   if (distance < (mainRedBall.mainBallSize)/2) {
+   mouseOnRedBall = true;
+   } else {
+   mouseOnRedBall = false;
+   }
+   }
+   } */
+}
+
+void mouseClicked() {
+  isMouseOnMainBall();
+  mouseClicks++;
+  if ((mouseClicks > 0) && (mouseClicks <= 1)) {
+    gameScreen = 1;
+  }
+  if ((mouseOnRedBall == true) && (mouseClicks > 1)) {
+    gameScreen = 3;
+  }
+  if ((mouseOnRedBall == false) && (mouseClicks > 1)) {
+    gameScreen = 2;
+  }
+}
+
+void isMouseOnMainBall() {
+  if (((mouseX > (mainBallx - mainr)) && (mouseX < (mainBallx + mainr))) || ((mouseY > (mainBally - mainr)) && (mouseY < (mainBally +mainr)))) {
+    // (((mouseX > (mainBallx - mainr)) && (mouseX < mainBallx)) || ((mouseX < (mainBallx + mainr)) && (mouseX > mainBallx))) && (((mouseY > (mainBally - mainr)) && (mouseY < mainBally)) || ((mouseY < (mainBally + mainr)) && (mouseY > mainBally))) ) {
+    mouseOnRedBall = true;
+  } else {
+    mouseOnRedBall = false;
+  }
+}
+
+MainBall mainRedBall = new MainBall(25, 72);
+
+// this code is for the randomly moving white circles
+class MovingBalls {
+  float x, y, xSpeed, ySpeed;
+  MovingBalls(float xpos, float ypos) {
+    x = xpos;
+    y = ypos;
+    ballx = 10;
+    bally = 50;
+    xSpeed = XSPEED;
+    ySpeed = YSPEED;
+  }
+
+  void update() {
+    x += xSpeed;
+    y += ySpeed;
+  }
+
+  void checkCollisions() {
+    if ( (x<r) || (x>width-r)) {
+      xSpeed = -xSpeed;
+    }
+    if ( (y<r) || (y>height-r)) {
+      ySpeed = -ySpeed;
+    }
+  }
+
+  void drawManyBalls() {
+    fill(255);
+    ellipse(x, y, ballSize, ballSize);
+  }
+} 
+
+MovingBalls[] manyBallsArray = new MovingBalls[20];
+
+void setup() {
+  background(0); 
+  size(500, 500);
+  smooth();
+  // next bit of code for randomly moving circles
+  for (int i=0; i < manyBallsArray.length; i++) {
+    manyBallsArray[i] = new MovingBalls(random(ballSize, width-ballSize), 
+      random(ballSize, height-ballSize));
+  }
+}
+
+void draw() {
+  // these are the different game screens depending on when you start the game, and if 
+  // you win or lose
+  if (gameScreen == 0) {
+    initScreen();
+  } else if (gameScreen == 1) {
+    gameScreen();
+  } else if (gameScreen == 2) {
+    gameOverScreen();
+  } else if (gameScreen == 3) {
+    gameWonScreen();
+  }
+}
+
+
+// this is the starting screen with instructions
+void initScreen() {
+  background(0);
+  textAlign(CENTER);
+  text("Click on the coloured ball 3 times to win. Click anywhere to start. Good luck!", height/2, width/2);
+}
+
+// if you click the red ball 3 times, this screen shows and you win
+void gameWonScreen() {
+  background(0);
+  textAlign(CENTER);
+  text("CONGRATULATIONS, YOU WIN!", height/2, width/2);
+}
+
+// if you click anywhere but the red ball during the game, this screen shows and you lose
+void gameOverScreen() {
+  background(0);
+  textAlign(CENTER);
+  text("GAME OVER", height/2, width/2);
+}
+
+// this starts the game when you first click
+void mousePressed() {
+  if (gameScreen==0) {
+    startGame();
+  }
+}
+
+void startGame() {
+  gameScreen=1;
+}
+
+// this has the functions of the game itself such as actually drawing the balls, moving
+// them and adding the clicking function of the game
+void gameScreen() {
+  background(0);
+  // starts the main ball at these coordinates
+  addOtherBalls();
+  mainRedBall.updateMainBall();
+  mainRedBall.moveMainBall();
+  mainRedBall.drawMainBall();
+}
+
+// for the creation and movement of the many white circles
+void addOtherBalls() {
+
+  for (int i=0; i < manyBallsArray.length; i++) {
+
+    manyBallsArray[i].update();
+    manyBallsArray[i].checkCollisions();
+    manyBallsArray[i].drawManyBalls();
+  }
+}
