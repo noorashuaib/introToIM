@@ -1,3 +1,15 @@
+ /************************************** POETRY VS MADLIBS ***********************************************/
+
+/************************************ References **************************************\
+https://processing.org/reference/Table_getStringColumn_.html
+ https://processing.org/reference/Table.html
+ https://processing.org/reference/textLeading_.html
+ https://github.com/aaronsherwood/introduction_interactive_media/blob/master/processingExamples/textExamples/splitCommas/splitCommas.pde
+ https://github.com/JulianAGCarrera/Intro_IM/blob/master/Generative_Text_Output/Noun_Verb_Adverb_Generator.pde
+ https://github.com/paredesfluffyshark/Intro-To-IM/blob/master/Text-Generator/Text-Generator-Code-Quim.pde
+ https://processing.org/reference/text_.html
+ /*************************************************************************************/
+
 // creates a table to store the data from the csv file
 Table table;
 
@@ -85,14 +97,4 @@ void mouseClicked() {
     "\nAnd walking the footsteps of a stranger", 150, 200);
   
 } 
-/**************************************************************************************\
-
-/************************************ References **************************************\
-https://processing.org/reference/Table_getStringColumn_.html
- https://processing.org/reference/Table.html
- https://processing.org/reference/textLeading_.html
- https://github.com/aaronsherwood/introduction_interactive_media/blob/master/processingExamples/textExamples/splitCommas/splitCommas.pde
- https://github.com/JulianAGCarrera/Intro_IM/blob/master/Generative_Text_Output/Noun_Verb_Adverb_Generator.pde
- https://github.com/paredesfluffyshark/Intro-To-IM/blob/master/Text-Generator/Text-Generator-Code-Quim.pde
- https://processing.org/reference/text_.html
- /*************************************************************************************/
+/**************************************************************************************/
