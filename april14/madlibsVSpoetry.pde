@@ -57,8 +57,9 @@ void setup() {
     "\n"+randomAdverb+" wandering,"+
     "\nWishing she were "+randomVerb+" instead,"+
     "\nBut clinging to her "+randomEmotion+","+
-    "\nAnd walking the footsteps of a stranger.", 45, 100);
+    "\nAnd walking the footsteps of a stranger.", 250, 100);
 }
+
 
 
 /************************************* Problems: **************************************\
@@ -98,4 +99,9 @@ void setup() {
  "\nAnd walking the footsteps of a stranger", 150, 200);
  
  } 
+ 
+ I also tried to use 'String adjective[] = rowAdjective.getString(1)' but this was a tedious process and also didn't always
+ work so I used table.getStringColumn which was much easier in creating a table in excel and using that data to randomize
+ the words chosen. 
+ 
 /**************************************************************************************/
