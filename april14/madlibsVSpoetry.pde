@@ -36,7 +36,7 @@ void setup() {
   String place[] = table.getStringColumn("Place");
   String emotion[] = table.getStringColumn("Emotion");
 
-  // chooses a random word from each category to be the variable in each new poem/madlib
+  // chooses a random word from each array to be the variable in each new poem/madlib
   randomAdjective = adjective[int(random(0, 6))];
   randomNoun = noun[int(random(0, 6))];
   randomVerb = verb[int(random(0, 6))];
@@ -47,7 +47,8 @@ void setup() {
   // creates the text, and aligns it. Here the variables are added into the blank spaces 
   // to create a poem/madlibs depending on which words are generated. New lines are created
   // using \n to give it an air of poetry.
-  textAlign(LEFT);
+  textAlign(CENTER);
+  textSize(22);
   fill(40);
   text("\n"+randomAdjective+""+
     "\nShe was in "+randomPlace+","+
@@ -56,7 +57,7 @@ void setup() {
     "\n"+randomAdverb+" wandering,"+
     "\nWishing she were "+randomVerb+" instead,"+
     "\nBut clinging to her "+randomEmotion+","+
-    "\nAnd walking the footsteps of a stranger", 150, 200);
+    "\nAnd walking the footsteps of a stranger.", 45, 100);
 }
 
 
