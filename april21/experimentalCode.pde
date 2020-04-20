@@ -1,6 +1,6 @@
 // CODE FOR LINE CONDENSING AROUND MOUSE
 /* I added the function moveToMouse to make the lines near the mouse converge at the mouse, resulting in a darker web 
-surrounding the mouse whereever you move it. */
+surrounding the mouse wherever you move it. */
 
 Rotater[] rotaters;
 
