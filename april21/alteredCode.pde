@@ -1,4 +1,7 @@
+// for the lines
 Rotater[] rotaters;
+
+// for the ball
 PVector velocityBall;
 PVector gravity;
 PVector position;
@@ -10,6 +13,7 @@ float hDampening;
 
 void setup() {
   size(640, 360);
+  // drops a new ball using PVectors
   noFill();
   position = new PVector(width/2, 0);
   velocityBall = new PVector(0, 0);
@@ -17,6 +21,7 @@ void setup() {
   gravity = new PVector(0, 0.5*mass);
   wind = new PVector(0, 0);
   hDampening=map(mass, 15, 80, .98, .96);
+  // creates 200 lines randomly placed
   rotaters = new Rotater[200];
   for (int i=0; i< rotaters.length; i++) {
     float x = random(width);
@@ -29,22 +34,28 @@ void setup() {
 
 void draw() {
   background(255);
+  // calls the functions that make the lines react to the mouse and the ball
   stroke(18, 18, 139, 75);
   for (Rotater r : rotaters) {
     r.rotate();
     r.distance(rotaters);
     r.moveToMouse(rotaters);
+    r.checkBall();
   }
+  // reduces the speed of the ball if no keys are pressed
   if (!keyPressed) {
     wind.x=0;
     velocityBall.x*=hDampening;
   }
+  // otherwise makes the ball move by calling applyForce using the force PVector
   applyForce(wind);
   applyForce(gravity);
+  // adds acceleration to the ball's motion
   velocityBall.add(accelerationBall);
   velocityBall.mult(drag);
   position.add(velocityBall);
   accelerationBall.mult(0);
+  // draws the ball
   ellipse(position.x, position.y, mass, mass);
   if (position.y > height-mass/2) {
     velocityBall.y *= -0.9;  // A little dampening when hitting the bottom
@@ -59,6 +70,7 @@ void applyForce(PVector force) {
   accelerationBall.add(f);
 }
 
+// accelerates the ball using the PVector wind when a key is pressed
 void keyPressed() {
   if (keyCode==LEFT) {
     wind.x=-1;
@@ -73,9 +85,12 @@ void keyPressed() {
   }
 }
 
+// this class contains all the information for the randomly drawn lines
 class Rotater {
   float centerX, centerY, x, y, angle, radius, speed, lineDistance, acceleration, direction;
+  // index makes sure that the line isn't refering to itself when doing the function
   int index;
+  // constructor
   Rotater(float _x, float _y, int i, float ld) {
     centerX= _x;
     centerY=_y;
@@ -93,18 +108,12 @@ class Rotater {
   }
 
   void rotate() {
-    //get cartesian coords from polar angle
-    //add to center point of rotater to rotate around the actual spot
     x = cos(angle)*radius+centerX;
     y = sin(angle)*radius+centerY;
-    //same as normal: vel+=acc
     speed+=acceleration;
-    //angle is our pos now, mult by our direction
     angle+=speed*direction;
-    //dampen it a little
     speed*=.98;
     acceleration=0;
-    //rect(x, y, 2, 2);
   }
 
   void distance(Rotater[] rotaters) {
@@ -120,13 +129,14 @@ class Rotater {
     }
   }
 
+  //if mouse is close enough give some acceleration
   void checkMouse() {
-    //if mouse is close enough give some acceleration
     if (dist(position.x, position.y, x, y)<100) {
       acceleration=.002;
     }
   }
 
+  // if the ball is close enough, give some acceleration
   void checkBall() {
     if (dist(mouseX, mouseY, x, y)<100 && mouseX!=pmouseX && mouseY!=pmouseY) {
       acceleration=.002;
@@ -134,11 +144,13 @@ class Rotater {
   }
 
   void moveToMouse(Rotater[] rotaters) {
+    // makes the rotaters condense around the mouse if it is close enough
     checkMouse();
     for (Rotater r : rotaters) {
       if (dist(r.x, r.y, mouseX, mouseY)<lineDistance) {
         line(r.x, r.y, mouseX, mouseY);
       }
+      // draws red lines connecting to the rotaters that are close to the ball
       if (dist(r.x, r.y, position.x, position.y)<lineDistance) {
         pushStyle();
         strokeWeight(0.2);
