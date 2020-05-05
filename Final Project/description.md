@@ -6,7 +6,7 @@ The aim of my final project is to create a virtual nature walk like the ones we 
 
 I envision the tour starting out with a map of Sri Lanka, where you can click on the different regions of the country to view a different site in that region. Once you are taken to the site of your choice, you have multiple options to explore the site. One way would be to click on the animals/waterfalls/noise generating object in the image to hear the sounds of nature. Another way you can interact with the site is to use your arrow keys to zoom in or out, and move side to side. I also want to include a little explanation bubble at the side of each site so that you can click on it to read a little explanation of the site. I'm also hoping to include a little quiz you can do at the end of the tour, after going through all the explanations. I want to include more features, and hopefully I will, once I continue working on my code and discover new possibilities. 
 
-**Sketch of final project plan:
+**Sketch of final project plan:**
 
 ![](sketch1.jpg)
 ![](sketch2.jpg)
