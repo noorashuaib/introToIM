@@ -6,10 +6,10 @@ My final project was really fun to plan, I was able to virtually revisit the dif
 
 Overall, I am really happy with the end product of my final project. The final seal of approval was when I showed it to my Dad, who laughed when hearing the bird calls and said it brought back so many memories. My aim of the project was to allow people who had been to Sri Lanka to feel at home again, even for a second, and to allow people who haven't been to Sri Lanka to experience a slice of my home, in theirs. 
 
-!()[1.jpg]
-!()[2.jpg]
-!()[3.jpg]
-!()[4.jpg]
+![](1.jpg)
+![](2.jpg)
+![](3.jpg)
+![](4.jpg)
 
 **Thanks to:**
 
