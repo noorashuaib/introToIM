@@ -34,7 +34,7 @@ void waterfallScreen() {
   }
 
   // adding the waterfall sound marker and sound effect
-  fill(16, 48, 176);
+  fill(255, 255, 0);
   ellipse(385, 450, 15, 15);
   // ensuring that the sound effect only plays once when the marker is clicked
   if ((dist(mouseX, mouseY, 385, 450) < r) && clicked == true) {
@@ -44,7 +44,7 @@ void waterfallScreen() {
   }
 
   // adding the morning sounds marker and sound effect
-  fill(16, 48, 176);
+  fill(255, 255, 0);
   ellipse(665, 35, 15, 15);
   // ensuring that the sound effect only plays once when the marker is clicked
   if ((dist(mouseX, mouseY, 665, 35) < r) && clicked == true) {
