@@ -35,7 +35,7 @@ void trainScreen() {
   }
 
   // adding the train sound marker and sound effect
-  fill(16, 48, 176);
+  fill(255, 255, 0);
   ellipse(360, 310, 15, 15);
   // ensuring that the sound effect only plays once when the marker is clicked
   if ((dist(mouseX, mouseY, 360, 310) < r) && (clicked == true)) {
@@ -45,7 +45,7 @@ void trainScreen() {
   }
 
   // adding the mountain sound marker and sound effect
-  fill(16, 48, 176);
+  fill(255, 255, 0);
   ellipse(300, 55, 15, 15);
   // ensuring that the sound effect only plays once when the marker is clicked
   if ((dist(mouseX, mouseY, 300, 55) < r) && (clicked == true)) {
