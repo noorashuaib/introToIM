@@ -35,7 +35,7 @@ void beachScreen() {
   }
 
   // adding the waves noise marker and sound effect
-  fill(16, 48, 176);
+  fill(255, 255, 0);
   ellipse(240, 255, 15, 15);
   // ensuring that the sound effect only plays once when the marker is clicked
   if ((dist(mouseX, mouseY, 240, 255) < r) && clicked == true) {
@@ -45,7 +45,7 @@ void beachScreen() {
   }
 
   // adding the resort noise marker and sound effect
-  fill(16, 48, 176);
+  fill(255, 255, 0);
   ellipse(475, 410, 15, 15);
   // ensuring that the sound effect only plays once when the marker is clicked
   if ((dist(mouseX, mouseY, 475, 410) < r) && clicked == true) {
