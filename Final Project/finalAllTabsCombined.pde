@@ -303,7 +303,7 @@ void elephantOrphanageScreen() {
   }
 
   // adding the elephant sound marker and sound effect
-  fill(16, 48, 176);
+  fill(255, 255, 0);
   ellipse(465, 265, 15, 15);
   // ensuring that the sound effect only plays once when the marker is clicked
   if ((dist(mouseX, mouseY, 465, 265) < r) && clicked == true) {
@@ -313,7 +313,7 @@ void elephantOrphanageScreen() {
   }
 
   // adding the trees sound marker and sound effect
-  fill(16, 48, 176);
+  fill(255, 255, 0);
   ellipse(360, 140, 15, 15);
   // ensuring that the sound effect only plays once when the marker is clicked
   if ((dist(mouseX, mouseY, 360, 140) < r) && clicked == true) {
@@ -369,7 +369,7 @@ void beachScreen() {
   }
 
   // adding the waves noise marker and sound effect
-  fill(16, 48, 176);
+  fill(255, 255, 0);
   ellipse(240, 255, 15, 15);
   // ensuring that the sound effect only plays once when the marker is clicked
   if ((dist(mouseX, mouseY, 240, 255) < r) && clicked == true) {
@@ -379,7 +379,7 @@ void beachScreen() {
   }
 
   // adding the resort noise marker and sound effect
-  fill(16, 48, 176);
+  fill(255, 255, 0);
   ellipse(475, 410, 15, 15);
   // ensuring that the sound effect only plays once when the marker is clicked
   if ((dist(mouseX, mouseY, 475, 410) < r) && clicked == true) {
@@ -435,7 +435,7 @@ void trainScreen() {
   }
 
   // adding the train sound marker and sound effect
-  fill(16, 48, 176);
+  fill(255, 255, 0);
   ellipse(360, 310, 15, 15);
   // ensuring that the sound effect only plays once when the marker is clicked
   if ((dist(mouseX, mouseY, 360, 310) < r) && (clicked == true)) {
@@ -445,7 +445,7 @@ void trainScreen() {
   }
 
   // adding the mountain sound marker and sound effect
-  fill(16, 48, 176);
+  fill(255, 255, 0);
   ellipse(300, 55, 15, 15);
   // ensuring that the sound effect only plays once when the marker is clicked
   if ((dist(mouseX, mouseY, 300, 55) < r) && (clicked == true)) {
@@ -500,7 +500,7 @@ void waterfallScreen() {
   }
 
   // adding the waterfall sound marker and sound effect
-  fill(16, 48, 176);
+  fill(255, 255, 0);
   ellipse(385, 450, 15, 15);
   // ensuring that the sound effect only plays once when the marker is clicked
   if ((dist(mouseX, mouseY, 385, 450) < r) && clicked == true) {
@@ -510,7 +510,7 @@ void waterfallScreen() {
   }
 
   // adding the morning sounds marker and sound effect
-  fill(16, 48, 176);
+  fill(255, 255, 0);
   ellipse(665, 35, 15, 15);
   // ensuring that the sound effect only plays once when the marker is clicked
   if ((dist(mouseX, mouseY, 665, 35) < r) && clicked == true) {
