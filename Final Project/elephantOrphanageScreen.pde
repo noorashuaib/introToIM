@@ -45,7 +45,7 @@ void elephantOrphanageScreen() {
   }
 
   // adding the trees sound marker and sound effect
-  fill(16, 48, 176);
+  fill(255, 255, 0);
   ellipse(360, 140, 15, 15);
   // ensuring that the sound effect only plays once when the marker is clicked
   if ((dist(mouseX, mouseY, 360, 140) < r) && clicked == true) {
@@ -61,7 +61,7 @@ void elephantOrphanageScreen() {
 }
 
   // trees noise marker and noise
-  fill(16, 48, 176);
+  fill(255, 255, 0);
   ellipse(360, 140, 15, 15);
   treesSound = new SoundFile(this, "natureNoise.mp3");
   if ((dist(mouseX, mouseY, 465, 265) < r) && mousePressed) {
